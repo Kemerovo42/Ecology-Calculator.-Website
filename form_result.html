@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты формы</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f9f0;
+            color: #333;
+            padding: 40px 20px;
+        }
+        
+        .result {
+            width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px #000000a6;
+        }
+                
+        h1 {
+            color: #2e7d32;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #c8e2c9;
+            padding-bottom: 15px;
+        }
+        
+        .data {
+            background: #f1f8e9;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease
+        }
+
+        .data:hover {
+            box-shadow: 0 0 20px #97dda0; 
+            transform: scale(0.97);
+            background: #7eb986;
+        }
+
+        .date {
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 5px;
+            background: #e8f5e9;
+            font-weight: bold;
+        }
+        
+        a {
+            transition: background 0.2s ease; 
+            display: block;
+            width: 150px;
+            margin: 25px auto;
+            padding: 10px;
+            background: #4caf50;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+        
+        a:hover {
+            background: #378d3c;
+        }
+
+        
+    </style>
+</head>
+<body>
+    {% block content %}
+    <div class="result">
+        <h1>Форма отправлена ✅</h1>
+        
+        <div class="data">
+            <p>Ваше имя: {{ name }}</p>
+        </div>
+        
+        <div class="data">
+            <p>Ваша электронная почта: {{ email }}</p>
+        </div>
+        
+        <div class="data">
+            <p>Ваш адрес: {{ address }}</p>
+        </div>
+        
+        <div class="date">
+            <p>Дата приезда: {{ date }}</p>
+        </div>
+        
+        <a href="/">На главную</a>
+    </div>
+    {% endblock %} 
+</body>
+</html>
